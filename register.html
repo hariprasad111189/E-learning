@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    <h1>Create new account.</h1>
+    <form action="register.php" method="post">
+    <input type="text" name="name" placeholder="Names" class="name">
+    <input type="text" name="name1" placeholder="Surnames" class="sur-name"><br>
+    <input type="text" name="email" placeholder="Email" class="email"><br>
+    <div class="password-container">
+        <input type="password" placeholder="Password" name="password" class="password" id="password" />
+        <img src="eye1.png" alt="Toggle Password" class="toggle-password" id="togglePassword" />
+      </div>
+    <button class="create">Create account</button>
+  </form>
+    <p class="p3">Already have an account? <a href=" login.html"><span> Log in</span></a></p>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const passwordInput = document.getElementById("password");
+      const togglePassword = document.getElementById("togglePassword");
+
+      togglePassword.addEventListener("click", function () {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+
+        // Toggle icon (if you have 2 icons: 'eye1.png' for closed and 'eye-hide.png' for open)
+        this.src = type === "password" ? "eye1.png" : "eye1.png"; // Ensure the image file exists
+      });
+    });
+    app.post('/signup', async (req, res) => {
+  const { username, email, password } = req.body;
+
+  // Basic validation
+  if (!username || !email || !password) {
+    return res.status(400).send('All fields are required');
+  }
+
+  // Check if the email already exists
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.status(400).send('Email already in use');
+  }
+
+  // Save directly without hashing
+  const newUser = new User({
+    username,
+    email,
+    password // saving plain password
+  });
+
+  await newUser.save();
+
+  res.send('Account created successfully!');
+});
+
+
+  </script>
+</body>
+</html>

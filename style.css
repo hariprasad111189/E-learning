@@ -1,0 +1,506 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.total_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('back51.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding: 0 5%;
+    color: white;
+    position: relative;
+    animation: zoomPan 30s ease-in-out infinite;
+}
+
+@keyframes zoomPan {
+    0% {
+        background-size: 100%;
+        background-position: center;
+    }
+    25% {
+        background-size: 110%;
+        background-position: left;
+    }
+    50% {
+        background-size: 120%;
+        background-position: center;
+    }
+    75% {
+        background-size: 110%;
+        background-position: right;
+    }
+    100% {
+        background-size: 100%;
+        background-position: center;
+    }
+}
+
+
+.text {
+    width: 800px;
+    z-index: 2;
+    color: #0c192e;
+    font-size: 20px;
+    margin-top: -300px;
+}
+
+.text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.text p {
+    font-size: 1.2rem;
+    color: rgb(43, 42, 42);
+}
+
+.overlay {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 5%;
+    background: rgba(0, 0, 0, 0.4); 
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    margin-right: 150px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    max-width: 350px;
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    color: #000;
+}
+
+.form-container h2 {
+   margin-top: 5px;
+   margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    padding: 0.8rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    margin-left: 75px;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.content h1 {
+    color: #0c192e;
+    font-size: 35px;
+}
+
+.search-box {
+    display: flex;
+    flex-wrap: column;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    margin-top: 15px;
+}
+
+.input {
+    width: 100%;
+    background-color: #d2cdcd;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 12px;
+}
+
+.input::placeholder {
+    font-size: 10px;
+    padding-left: 10px;
+}
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header
+{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    padding: 10px;
+    padding: 20px;
+}
+.content {
+    background-image: url('back51.jpg');  /* Ensure the image path is correct */
+    background-size: cover;  /* Ensures the background image covers the entire area */
+    background-position: 0 0;  /* Starting position */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    animation: backgroundAnimation 20s linear infinite;
+    position: relative;  /* Ensure the overlay and form are positioned relative to this */
+}
+.move
+{
+    padding-left: 800px;
+}
+.text
+{
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* adds space between menu icon and logo */
+    position: relative;
+}
+
+.menu {
+    width: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px; /* adjust based on your layout */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.dropdown a {
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #f0f0f0;
+}
+.left img
+{
+    height: 30px;
+    color: white;
+}
+h3{
+    display: flex;
+    vertical-align: top;
+    margin-bottom: 8px;
+    color: white;
+    cursor: pointer;
+}
+.right
+{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    margin-left: 980px;
+
+}
+.b1{
+    padding: 8px;
+    border:1px solid white;
+    background-color: black;
+    color:white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+.b2
+{
+    padding: 8px;
+    border:1px solid black;
+    background-color: white;
+    color:black;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
+    text-align: center;
+
+}
+.b2:hover
+{
+    text-decoration: underline;
+}
+.b1:hover
+{
+    text-decoration: underline;
+}
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+#modeToggle {
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+body.light-mode #modeToggle {
+    background-color: #ddd;
+    color: #000;
+}
+#modeToggle img {
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+#modeToggle:hover img {
+    transform: rotate(30deg);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items:first baseline;
+    padding: 40px 20px;
+    text-align: center;
+    padding-left: 100px;
+}
+.content h1
+{
+    color: #0c192e;
+    font-size: 35px;
+}
+p
+{
+    margin-top: 0px;
+    font-size: 18px;
+    color: rgb(43, 42, 42);
+    padding-left: 5px;
+}
+h2{
+    margin-bottom: 9px;
+}
+.search-box{
+    display: flex;
+    flex-wrap: column;
+    align-items: center;
+    position: relative;
+    width: 300px; /* Set width of combined search bar */
+    margin-top: 15px;
+}
+
+.input {
+    width: 100%; /* Take up full width */
+    background-color: #d2cdcd;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 12px;
+}
+
+.input::placeholder
+{
+    font-size: 10px;
+    padding-left: 10px;
+}
+.b3 {
+    background-color: #3d7dd6;
+    border: none;
+    color: white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+}
+
+
+.b3:hover {
+    background-color: #3167b6;
+}
+.b4
+{
+    padding:10px;
+    width: 150px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #202c3f;
+    border: 1px solid #0c192e;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.content2
+{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.content2 h2
+{
+    margin-bottom: 20px;
+    color: white;
+}
+.content2 a
+{
+    margin-bottom: 20px;
+}
+.full {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 20px 60px; 
+    justify-items: center;
+}
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;    
+    padding: 20px 40px; 
+}
+.course {
+    width: 230px;
+}
+.border {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 220px;
+    height: 260px;
+    overflow: hidden;
+    background-color: #0c192e;
+    padding-bottom: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    margin-bottom: 30px;
+}
+.border:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.border img
+{
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail {
+    padding: 10px;
+    background-color: #0c192e;
+    
+}
+.thumbnail a
+{
+    color: white;
+    text-decoration: none;
+    width: 40px;
+    font-size: 18px;
+}
+.thumbnail a:hover
+{
+    text-decoration: underline;
+}
+
+
+.profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.level-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    gap: 5px;
+}
+
+
+.level-price button {
+    padding: 5px 10px;
+    background-color: #3d7dd6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color:white;
+    font-size: 14px;
+margin: 10px;
+}

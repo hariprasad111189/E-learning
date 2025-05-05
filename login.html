@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login_page</title>
+  <link rel="stylesheet" href="login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- ✅ Google Sign-In Script -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="content">
+    <h1>Log in to your account.</h1> <br>
+    <form action="/login.html" method="post">
+      <input type="text" placeholder="Email" class="email" /><br />
+      
+      <div class="password-container">
+        <input type="password" placeholder="Password" class="password" id="password" />
+        <img src="eye1.png" alt="Toggle Password" class="toggle-password" id="togglePassword" />
+      </div>
+
+      <p class="p1">Forgot your password?</p>
+      <button class="login">Login</button>
+    </form>
+
+    <p class="p2">Or login with</p>
+
+    <!-- ✅ Google Image -->
+    <img src="google.svg" alt="google" id="googleLogin" style="cursor:pointer;" />
+    <img src="facebook.svg" alt="facebook" />
+    <img src="apple1.svg" alt="apple" />
+
+    <p class="p3">
+      Don't have an account?<a href="register.html"><span> Create Account</span></a>
+    </p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const passwordInput = document.getElementById("password");
+      const togglePassword = document.getElementById("togglePassword");
+
+      togglePassword.addEventListener("click", function () {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        this.src = type === "password" ? "eye1.png" : "eye1.png";
+      });
+
+      // ✅ First Initialize Google Sign-In
+      google.accounts.id.initialize({
+        client_id: "YOUR_CLIENT_ID.apps.googleusercontent.com", // <-- Put your Google Client ID here
+        callback: handleCredentialResponse
+      });
+
+      function handleCredentialResponse(response) {
+        console.log("Google token", response.credential);
+        // Here you can send token to your server
+        alert("Logged in with Google!");
+      }
+
+      const googleLogin = document.getElementById("googleLogin");
+      googleLogin.addEventListener("click", function () {
+        google.accounts.id.prompt(); // ✅ Now this will work
+      });
+    });
+  </script>
+</body>
+</html>
